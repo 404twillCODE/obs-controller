@@ -44,6 +44,7 @@ class AppConfig:
     recording_name_prefix: str
     clip_name_prefix: str
     video_extensions: tuple[str, ...]
+    replay_buffer_clip_on_single_share: bool
 
     @staticmethod
     def settings_path() -> Path:
@@ -104,6 +105,7 @@ class AppConfig:
             recording_name_prefix=str(req("recording_name_prefix")),
             clip_name_prefix=str(req("clip_name_prefix")),
             video_extensions=tuple(str(x).lower() if str(x).startswith(".") else f".{x}".lower() for x in exts),
+            replay_buffer_clip_on_single_share=bool(data.get("replay_buffer_clip_on_single_share", False)),
         )
 
     def resolved_obs_recordings_folder(self) -> Path:

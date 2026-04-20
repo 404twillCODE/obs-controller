@@ -35,6 +35,29 @@ def _record_directory_from_response(data: Any) -> Path:
     raise RuntimeError(f"Unexpected GetRecordDirectory payload: {data!r}")
 
 
+def _replay_buffer_active_from_status(data: Any) -> bool:
+    if isinstance(data, dict):
+        return bool(data.get("outputActive"))
+    for key in ("output_active", "outputActive"):
+        if hasattr(data, key):
+            return bool(getattr(data, key))
+    raise RuntimeError(f"Unexpected GetReplayBufferStatus payload: {data!r}")
+
+
+def _saved_replay_path_from_response(data: Any) -> Optional[Path]:
+    if isinstance(data, dict):
+        raw = data.get("savedReplayPath") or data.get("saved_replay_path")
+        if not raw:
+            return None
+        return Path(str(raw)).expanduser().resolve()
+    for key in ("saved_replay_path", "savedReplayPath"):
+        if hasattr(data, key):
+            raw = getattr(data, key)
+            if raw:
+                return Path(str(raw)).expanduser().resolve()
+    return None
+
+
 class ObsWsClient:
     """
     Thin, logging-friendly wrapper around ``ReqClient`` with basic resilience.
@@ -156,6 +179,65 @@ class ObsWsClient:
     def stop_recording(self) -> None:
         logger.info("OBS StopRecord")
         self._send("stop_record", lambda cl: cl.stop_record())
+
+    def is_replay_buffer_active(self) -> bool:
+        """Whether OBS reports the replay buffer output as running."""
+
+        def call(cl: obs.ReqClient) -> bool:
+            data: Any = cl.get_replay_buffer_status()
+            return _replay_buffer_active_from_status(data)
+
+        return self._send("get_replay_buffer_status", call)
+
+    def save_replay_buffer(self) -> None:
+        logger.info("OBS SaveReplayBuffer")
+        self._send("save_replay_buffer", lambda cl: cl.save_replay_buffer())
+
+    def get_last_replay_buffer_path(self) -> Optional[Path]:
+        """Path OBS reports for the last replay save, if any."""
+
+        def call(cl: obs.ReqClient) -> Optional[Path]:
+            data: Any = cl.get_last_replay_buffer_replay()
+            return _saved_replay_path_from_response(data)
+
+        return self._send("get_last_replay_buffer_replay", call)
+
+    def wait_for_saved_replay_file(
+        self,
+        *,
+        stability_poll_ms: int,
+        stability_required_ms: int,
+        poll_timeout_sec: float,
+        video_extensions: tuple[str, ...],
+    ) -> Optional[Path]:
+        """
+        After ``save_replay_buffer``, poll ``GetLastReplayBufferReplay`` until a path
+        exists on disk, then wait until the file size is stable.
+        """
+        deadline = time.monotonic() + poll_timeout_sec
+        last_path: Optional[Path] = None
+        while time.monotonic() < deadline:
+            try:
+                p = self.get_last_replay_buffer_path()
+            except Exception as exc:  # noqa: BLE001
+                logger.debug("get_last_replay_buffer_path: %s", exc)
+                p = None
+            if p is not None and p.is_file() and is_probably_video_file(p, video_extensions):
+                last_path = p
+                if wait_until_file_stable(
+                    p,
+                    stability_ms=stability_required_ms,
+                    poll_ms=stability_poll_ms,
+                    timeout_sec=min(45.0, poll_timeout_sec),
+                ):
+                    logger.info("Replay buffer save file ready: %s", p)
+                    return p
+            time.sleep(0.12)
+        if last_path is not None:
+            logger.warning("Replay file found but did not stabilize in time: %s", last_path)
+        else:
+            logger.warning("No replay buffer file path from OBS within timeout")
+        return None
 
     def wait_until_not_recording(
         self,

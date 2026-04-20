@@ -25,6 +25,7 @@ from obs_controller_app.controller.ps4_input import Ps4InputListener
 from obs_controller_app.files.organizer import FileOrganizer
 from obs_controller_app.notifications.toast import ToastService
 from obs_controller_app.obs.obs_client import ObsWsClient
+from obsws_python.error import OBSSDKError
 from obs_controller_app.state.app_state import AppState
 
 logger = logging.getLogger(__name__)
@@ -259,7 +260,7 @@ class ObsControllerApp:
     def _on_share_pressed(self) -> None:
         """
         Count SHARE presses; after ``share_double_tap_window_ms`` with no new press,
-        dispatch by tap count (1 = ignored, 2 = toggle, 3+ = triple action).
+        dispatch by tap count (1 = replay clip if enabled, else ignored; 2 = toggle; 3+ = triple).
         """
         delay = max(0.05, self._config.share_double_tap_window_ms / 1000.0)
 
@@ -276,7 +277,7 @@ class ObsControllerApp:
                 if n <= 0:
                     return
                 if n == 1:
-                    self._submit_action(self._handle_single_share_noop)
+                    self._submit_action(self._handle_single_share)
                 elif n == 2:
                     self._submit_action(self._handle_double_tap)
                 else:
@@ -299,9 +300,64 @@ class ObsControllerApp:
 
     # --- SHARE actions --------------------------------------------------------------
 
-    def _handle_single_share_noop(self) -> None:
-        """One SHARE press alone does nothing (delete requires three presses while recording)."""
+    def _handle_single_share(self) -> None:
+        """
+        One SHARE press: optional replay-buffer clip save; otherwise ignored.
+
+        When ``replay_buffer_clip_on_single_share`` is true, saves the OBS replay
+        buffer once and moves the file into ``final_clips_folder``.
+        """
+        if self._config.replay_buffer_clip_on_single_share:
+            self._handle_replay_buffer_clip()
+            return
         logger.debug("SHARE x1 (ignored)")
+
+    def _handle_replay_buffer_clip(self) -> None:
+        if not self._obs.is_connected:
+            self._toast.show("OBS is not connected", "error")
+            return
+        try:
+            if not self._obs.is_replay_buffer_active():
+                self._toast.show("Replay buffer is not running — start it in OBS", "error")
+                return
+        except OBSSDKError as exc:
+            logger.warning("Replay buffer status failed: %s", exc)
+            self._toast.show("Replay buffer not available in OBS", "error")
+            return
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Replay buffer status failed: %s", exc)
+            self._toast.show("Could not read replay buffer status", "error")
+            return
+
+        try:
+            self._obs.save_replay_buffer()
+        except OBSSDKError as exc:
+            logger.error("SaveReplayBuffer failed: %s", exc)
+            self._toast.show("Save replay failed — check OBS replay buffer", "error")
+            return
+        except Exception as exc:  # noqa: BLE001
+            logger.error("SaveReplayBuffer failed: %s", exc)
+            self._toast.show("Save replay failed", "error")
+            return
+
+        clip_path = self._obs.wait_for_saved_replay_file(
+            stability_poll_ms=self._config.file_stable_poll_ms,
+            stability_required_ms=self._config.file_stable_required_ms,
+            poll_timeout_sec=min(90.0, self._config.file_finalize_timeout_sec),
+            video_extensions=self._config.video_extensions,
+        )
+        if clip_path is None:
+            self._toast.show("Replay clip file not ready", "error")
+            return
+
+        try:
+            self._organizer.move_and_rename_clip(clip_path)
+        except OSError as exc:
+            logger.error("Failed to move replay clip: %s", exc)
+            self._toast.show("Could not move replay clip", "error")
+            return
+
+        self._toast.show("Clip saved", "success")
 
     def _stop_recording_and_pick_finished_path(self) -> Optional[Path]:
         """
@@ -443,6 +499,5 @@ class ObsControllerApp:
 
 
 # --- future extension ---------------------------------------------------------------
-# Replay buffer / clip workflow hook (not wired yet):
-# subscribe to OBS events such as ReplayBufferSaved (EventClient) or trigger SaveReplayBuffer,
-# then call FileOrganizer.move_and_rename_clip with the path OBS returns.
+# Optional: subscribe to ReplayBufferSaved (EventClient) for instant path notification
+# instead of polling GetLastReplayBufferReplay after SaveReplayBuffer.
