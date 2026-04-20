@@ -32,6 +32,8 @@ class AppConfig:
     enable_system_tray: bool
     debug_logging: bool
     share_button_index: int
+    share_button_indices: tuple[int, ...]
+    controller_log_all_buttons: bool
     joystick_device_index: int
     obs_connect_timeout_sec: float
     obs_action_timeout_sec: float
@@ -69,6 +71,14 @@ class AppConfig:
         if not isinstance(exts, list) or not all(isinstance(x, str) for x in exts):
             raise ValueError("video_extensions must be a list of strings")
 
+        share_idx_list = data.get("share_button_indices")
+        if share_idx_list is not None:
+            if not isinstance(share_idx_list, list) or not share_idx_list:
+                raise ValueError("share_button_indices must be a non-empty list of integers when set")
+            share_button_indices = tuple(int(x) for x in share_idx_list)
+        else:
+            share_button_indices = (int(req("share_button_index")),)
+
         return cls(
             obs_host=str(req("obs_host")),
             obs_port=int(req("obs_port")),
@@ -82,6 +92,8 @@ class AppConfig:
             enable_system_tray=bool(req("enable_system_tray")),
             debug_logging=bool(req("debug_logging")),
             share_button_index=int(req("share_button_index")),
+            share_button_indices=share_button_indices,
+            controller_log_all_buttons=bool(data.get("controller_log_all_buttons", False)),
             joystick_device_index=int(req("joystick_device_index")),
             obs_connect_timeout_sec=float(req("obs_connect_timeout_sec")),
             obs_action_timeout_sec=float(req("obs_action_timeout_sec")),

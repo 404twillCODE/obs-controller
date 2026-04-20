@@ -52,9 +52,10 @@ class ObsControllerApp:
         self._toast = ToastService(default_duration_ms=config.notification_duration_ms)
         self._listener = Ps4InputListener(
             device_index=config.joystick_device_index,
-            share_button_index=config.share_button_index,
+            share_button_indices=config.share_button_indices,
             on_share_pressed=self._on_share_pressed,
             on_controller_status=self._on_controller_status,
+            log_all_buttons=config.controller_log_all_buttons,
         )
 
         self._running = True

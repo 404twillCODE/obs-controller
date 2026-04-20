@@ -54,7 +54,9 @@ The file lives next to the package as `obs_controller_app\settings.json` (or nex
 | `notification_duration_ms` | Toast visibility time. |
 | `enable_system_tray` | Tray menu on/off. |
 | `debug_logging` | Verbose logs when `true`. |
-| `share_button_index` | Zero-based joystick button index for SHARE (often `8` on DS4 over many Windows drivers — change if needed). |
+| `share_button_index` | Default SHARE button index when `share_button_indices` is omitted (often `8` on DS4). |
+| `share_button_indices` | Optional list, e.g. `[8]` or `[9]`. Use a **single** index unless you know you need alternates. If unset, the app uses `[share_button_index]`. |
+| `controller_log_all_buttons` | If `true`, every **button down** is logged with its index so you can find SHARE on odd drivers. Turn off after setup. |
 | `joystick_device_index` | Which `pygame` joystick slot to open (usually `0`). |
 | `file_stable_*` / `file_finalize_timeout_sec` | How long to wait for encoders to finish flushing files before move/delete. |
 
@@ -68,6 +70,14 @@ python -m obs_controller_app.main
 ```
 
 Keep OBS running with WebSocket enabled. Connect the controller before or after launch; if the device index is wrong, edit `joystick_device_index` or `share_button_index`.
+
+### Controller / SHARE not responding
+
+The app opens the pad as “PS4 Controller” but **SHARE uses different button numbers** depending on USB vs Bluetooth, Steam Input, DS4Windows, reWASD, etc.
+
+1. Set **`controller_log_all_buttons`** to **`true`** in `settings.json`, restart, press **only SHARE**, and read `obs_controller_app\logs\obs_controller_app.log` for a line like `button DOWN — index=N`. Put that `N` into **`share_button_indices`**: `"share_button_indices": [N]` (one value is enough).
+2. If **two** devices appear (wheel + controller), raise **`joystick_device_index`** to `1` so slot `0` is not your racing wheel.
+3. Turn **`controller_log_all_buttons`** back to **`false`** after you are done so logs stay quiet.
 
 ## SHARE controls (summary)
 

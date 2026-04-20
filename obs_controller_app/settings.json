@@ -11,6 +11,7 @@
   "enable_system_tray": true,
   "debug_logging": false,
   "share_button_index": 8,
+  "controller_log_all_buttons": false,
   "joystick_device_index": 0,
   "obs_connect_timeout_sec": 4.0,
   "obs_action_timeout_sec": 8.0,
