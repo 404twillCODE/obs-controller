@@ -1,8 +1,9 @@
 """
-Application orchestration: OBS WebSocket, SHARE tap timing, filesystem moves, tray.
+Application orchestration: OBS WebSocket, SHARE multi-tap timing, filesystem moves, tray.
 
-The pygame event loop runs on the main thread; blocking OBS and file work is
-offloaded to a small executor so controller polling stays responsive.
+SHARE uses a settle timer: presses chain until a gap of ``share_double_tap_window_ms``;
+then 2 presses toggle recording, 3+ presses while recording stop and delete that take.
+The pygame loop stays on the main thread; OBS and file work run on a small executor.
 """
 
 from __future__ import annotations
@@ -60,6 +61,7 @@ class ObsControllerApp:
 
         self._running = True
         self._share_timer: Optional[threading.Timer] = None
+        self._share_tap_count = 0
         self._share_timer_lock = threading.Lock()
         self._executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="obs-actions")
         self._last_obs_connect_try = 0.0
@@ -112,6 +114,7 @@ class ObsControllerApp:
             if self._share_timer is not None:
                 self._share_timer.cancel()
                 self._share_timer = None
+            self._share_tap_count = 0
         self._stop_tray()
         self._executor.shutdown(wait=False, cancel_futures=True)
         self._listener.shutdown()
@@ -254,22 +257,32 @@ class ObsControllerApp:
             self._toast.show("Controller connected", "success")
 
     def _on_share_pressed(self) -> None:
-        """Edge-triggered SHARE handler: double-tap window implemented with a timer."""
+        """
+        Count SHARE presses; after ``share_double_tap_window_ms`` with no new press,
+        dispatch by tap count (1 = ignored, 2 = toggle, 3+ = triple action).
+        """
+        delay = max(0.05, self._config.share_double_tap_window_ms / 1000.0)
+
         with self._share_timer_lock:
+            self._share_tap_count += 1
             if self._share_timer is not None:
                 self._share_timer.cancel()
-                self._share_timer = None
-                self._submit_action(self._handle_double_tap)
-                return
 
-            delay = max(0.05, self._config.share_double_tap_window_ms / 1000.0)
-
-            def _single_fire() -> None:
+            def _settle_fire() -> None:
                 with self._share_timer_lock:
                     self._share_timer = None
-                self._submit_action(self._handle_single_tap)
+                    n = self._share_tap_count
+                    self._share_tap_count = 0
+                if n <= 0:
+                    return
+                if n == 1:
+                    self._submit_action(self._handle_single_share_noop)
+                elif n == 2:
+                    self._submit_action(self._handle_double_tap)
+                else:
+                    self._submit_action(self._handle_triple_tap)
 
-            timer = threading.Timer(delay, _single_fire)
+            timer = threading.Timer(delay, _settle_fire)
             timer.daemon = True
             self._share_timer = timer
             timer.start()
@@ -285,6 +298,55 @@ class ObsControllerApp:
         self._executor.submit(_wrapped)
 
     # --- SHARE actions --------------------------------------------------------------
+
+    def _handle_single_share_noop(self) -> None:
+        """One SHARE press alone does nothing (delete requires three presses while recording)."""
+        logger.debug("SHARE x1 (ignored)")
+
+    def _stop_recording_and_pick_finished_path(self) -> Optional[Path]:
+        """
+        OBS must be recording. Stop output, wait for idle, locate the finished file.
+
+        On hard failures, updates recording-related state and shows a toast.
+        Returns ``None`` if stopping or locating the file failed.
+        """
+        try:
+            self._obs.stop_recording()
+        except Exception as exc:  # noqa: BLE001
+            logger.error("StopRecord failed: %s", exc)
+            self._toast.show("Could not stop recording", "error")
+            return None
+
+        if not self._obs.wait_until_not_recording(
+            poll_sec=0.25,
+            timeout_sec=self._config.obs_action_timeout_sec,
+        ):
+            self._toast.show("Recording did not finish cleanly", "error")
+            self._state.set_obs_is_recording(False)
+            self._state.set_recording_started_wall(None)
+            return None
+
+        try:
+            scan_dir = self._obs.get_record_directory()
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("GetRecordDirectory failed (%s); using config fallback", exc)
+            scan_dir = self._config.resolved_obs_recordings_folder()
+
+        anchor = self._state.get_recording_started_wall()
+        finished = self._obs.pick_finished_recording_file(
+            scan_dir=scan_dir,
+            anchor_wall_time=anchor,
+            video_extensions=self._config.video_extensions,
+            stability_poll_ms=self._config.file_stable_poll_ms,
+            stability_required_ms=self._config.file_stable_required_ms,
+            finalize_timeout_sec=self._config.file_finalize_timeout_sec,
+        )
+        if finished is None:
+            self._toast.show("Recording stopped but file could not be located", "error")
+            self._state.set_obs_is_recording(False)
+            self._state.set_recording_started_wall(None)
+            return None
+        return finished
 
     def _handle_double_tap(self) -> None:
         if not self._obs.is_connected:
@@ -324,40 +386,8 @@ class ObsControllerApp:
             self._toast.show("Recording started", "success")
             return
 
-        # --- stop path: wait for flush, then move / rename ----------------------------
-        try:
-            self._obs.stop_recording()
-        except Exception as exc:  # noqa: BLE001
-            logger.error("StopRecord failed: %s", exc)
-            self._toast.show("Could not stop recording", "error")
-            return
-
-        if not self._obs.wait_until_not_recording(
-            poll_sec=0.25,
-            timeout_sec=self._config.obs_action_timeout_sec,
-        ):
-            self._toast.show("Recording did not finish cleanly", "error")
-            return
-
-        try:
-            scan_dir = self._obs.get_record_directory()
-        except Exception as exc:  # noqa: BLE001
-            logger.warning("GetRecordDirectory failed (%s); using config fallback", exc)
-            scan_dir = self._config.resolved_obs_recordings_folder()
-
-        anchor = self._state.get_recording_started_wall()
-        finished = self._obs.pick_finished_recording_file(
-            scan_dir=scan_dir,
-            anchor_wall_time=anchor,
-            video_extensions=self._config.video_extensions,
-            stability_poll_ms=self._config.file_stable_poll_ms,
-            stability_required_ms=self._config.file_stable_required_ms,
-            finalize_timeout_sec=self._config.file_finalize_timeout_sec,
-        )
+        finished = self._stop_recording_and_pick_finished_path()
         if finished is None:
-            self._toast.show("Recording stopped but file could not be located", "error")
-            self._state.set_obs_is_recording(False)
-            self._state.set_recording_started_wall(None)
             return
 
         try:
@@ -374,19 +404,42 @@ class ObsControllerApp:
         self._state.set_last_finished_recording(dest)
         self._toast.show("Recording stopped", "success")
 
-    def _handle_single_tap(self) -> None:
-        path = self._state.get_last_finished_recording()
-        if path is None or not path.is_file():
-            self._toast.show("No recording to delete", "info")
+    def _handle_triple_tap(self) -> None:
+        """
+        Three or more SHARE presses while recording: stop and delete that recording file
+        (no move into the managed Recordings folder). When not recording, same as two taps.
+        """
+        if not self._obs.is_connected:
+            self._toast.show("OBS is not connected", "error")
             return
+
         try:
-            self._organizer.delete_file(path)
-        except OSError as exc:
-            logger.error("Delete failed: %s", exc)
-            self._toast.show("Could not delete last recording", "error")
+            recording = self._obs.is_recording()
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Could not read OBS recording state: %s", exc)
+            self._toast.show("OBS request failed — check connection", "error")
             return
-        self._state.set_last_finished_recording(None)
-        self._toast.show("Last recording deleted", "success")
+
+        if not recording:
+            self._handle_double_tap()
+            return
+
+        finished = self._stop_recording_and_pick_finished_path()
+        if finished is None:
+            return
+
+        try:
+            self._organizer.delete_file(finished)
+        except OSError as exc:
+            logger.error("Failed to delete recording: %s", exc)
+            self._toast.show("Recording stopped but delete failed", "error")
+            self._state.set_obs_is_recording(False)
+            self._state.set_recording_started_wall(None)
+            return
+
+        self._state.set_obs_is_recording(False)
+        self._state.set_recording_started_wall(None)
+        self._toast.show("Recording discarded", "success")
 
 
 # --- future extension ---------------------------------------------------------------

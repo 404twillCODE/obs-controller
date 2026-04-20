@@ -50,7 +50,7 @@ The file lives next to the package as `obs_controller_app\settings.json` (or nex
 | `obs_clips_output_folder` | Reserved for future replay-buffer workflows; created if used later. |
 | `final_recordings_folder` | Where finished recordings are moved and renamed. |
 | `final_clips_folder` | Reserved for clip finalization. |
-| `share_double_tap_window_ms` | Max gap between two SHARE presses to count as a double-tap (single-tap waits this long). |
+| `share_double_tap_window_ms` | Max idle gap (ms) after a SHARE press before the tap chain “settles.” Use ~300 for quick double-taps; increase slightly if triple-tap (stop+delete) is hard to trigger. |
 | `notification_duration_ms` | Toast visibility time. |
 | `enable_system_tray` | Tray menu on/off. |
 | `debug_logging` | Verbose logs when `true`. |
@@ -81,12 +81,15 @@ The app opens the pad as “PS4 Controller” but **SHARE uses different button 
 
 ## SHARE controls (summary)
 
-| Gesture | When OBS recording is off | When OBS recording is on |
-| --- | --- | --- |
-| **Double-tap SHARE** | Start recording | Stop, finalize file, move/rename into `final_recordings_folder`, remember path for single-tap delete |
-| **Single-tap SHARE** | Deletes last **finished** recording if one is tracked | Same (does not stop an active encode) |
+Presses **chain** until you pause longer than `share_double_tap_window_ms`, then the app picks an action from the **total** count.
 
-Single-tap is **delayed** until the double-tap window expires so a quick double-tap never triggers delete.
+| Count | When OBS is **not** recording | When OBS **is** recording |
+| --- | --- | --- |
+| **1** | Ignored | Ignored |
+| **2** | Start recording | Stop, finalize file, move/rename into `final_recordings_folder` |
+| **3+** | Same as **2** (starts recording) | Stop, finalize, then **delete** that recording file (nothing is moved into `final_recordings_folder`) |
+
+So: **two** SHARE presses = normal start/stop and keep the file (when stopping, it is organized). **Three or more** while already recording = **discard** that take (delete on disk). There is no separate “delete last saved clip” gesture anymore.
 
 ## How files are organized
 
