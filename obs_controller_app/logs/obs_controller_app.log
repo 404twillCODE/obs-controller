@@ -1,0 +1,1084 @@
+2026-04-20 16:24:55 | INFO     | __main__ | Starting OBS Controller v1.0.0
+2026-04-20 16:24:56 | INFO     | obs_controller_app.controller.ps4_input | Detected 2 joystick device(s)
+2026-04-20 16:24:56 | INFO     | obs_controller_app.controller.ps4_input | Opened joystick 0: ODDOR-TRUCKSHIFT (buttons=3)
+2026-04-20 16:24:56 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:24:56 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:24:58 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:24:58 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:24:59 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:24:59 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:01 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:01 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:02 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:25:02 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:04 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:04 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:05 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:25:05 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:07 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:07 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:08 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:08 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:25:08 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:25:08 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:10 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:10 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:11 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:25:11 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:13 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:13 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:14 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:25:14 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:16 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:16 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:17 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:25:17 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:19 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:20 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:21 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:21 | INFO     | obs_controller_app.controller.ps4_input | Joystick plugged in: 0
+2026-04-20 16:25:21 | INFO     | obs_controller_app.controller.ps4_input | Joystick plugged in: 1
+2026-04-20 16:25:21 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:25:21 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:25:21 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:23 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:23 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:24 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:25:24 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:26 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:26 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:27 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:25:27 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:29 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:29 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:30 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:25:30 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:32 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:32 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:33 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:33 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:25:33 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:25:33 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:35 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:35 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:36 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:25:36 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:38 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:38 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:39 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:25:39 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:41 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:41 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:42 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:25:42 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:44 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:44 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:45 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:45 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:25:45 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:25:45 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:47 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:47 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:48 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:25:48 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:50 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:50 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:51 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:25:51 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:53 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:53 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:54 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:25:54 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:56 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:56 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:57 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:57 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:25:57 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:25:57 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:25:59 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:25:59 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:00 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:26:00 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:02 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:02 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:03 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:26:03 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:05 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:05 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:06 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:26:06 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:08 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:08 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:09 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:09 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:26:09 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:26:09 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:11 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:11 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:12 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:26:12 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:14 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:14 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:15 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:26:15 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:17 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:17 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:18 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:26:18 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:20 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:20 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:21 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:21 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:26:21 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:26:21 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:23 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:23 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:24 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:26:24 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:27 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:27 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:28 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:26:28 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:30 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:30 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:31 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:26:31 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:33 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:33 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:34 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:34 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:26:34 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:26:34 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:36 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:36 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:37 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:26:37 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:39 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:39 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:40 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:26:40 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:42 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:42 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:43 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:26:43 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:45 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:45 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:46 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:46 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:26:46 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:26:46 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:48 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:48 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:49 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:26:49 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:51 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:51 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:52 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:26:52 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:54 | ERROR    | obsws_python.baseclient.ObsClient | ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+Traceback (most recent call last):
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\obsws_python\baseclient.py", line 41, in __init__
+    self.ws.connect(f"ws://{self.host}:{self.port}", timeout=self.timeout)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_core.py", line 263, in connect
+    self.sock, addrs = connect(
+                       ~~~~~~~^
+        url, self.sock_opt, proxy_info(**options), options.pop("socket", None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 146, in connect
+    sock = _open_socket(addrinfo_list, options.sockopt, options.timeout)
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 233, in _open_socket
+    raise err
+  File "C:\Users\beeto\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\websocket\_http.py", line 210, in _open_socket
+    sock.connect(address)
+    ~~~~~~~~~~~~^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:54 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): [WinError 10061] No connection could be made because the target machine actively refused it
+2026-04-20 16:26:55 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:26:55 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:57 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:26:57 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): authentication enabled but no password provided
+2026-04-20 16:26:58 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: authentication enabled but no password provided
+2026-04-20 16:26:58 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:26:58 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:26:58 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:58 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:26:58 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): authentication enabled but no password provided
+2026-04-20 16:26:59 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:26:59 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:26:59 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:26:59 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): authentication enabled but no password provided
+2026-04-20 16:27:00 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:27:00 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:00 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:00 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): authentication enabled but no password provided
+2026-04-20 16:27:01 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:27:01 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:01 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:01 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): authentication enabled but no password provided
+2026-04-20 16:27:02 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: authentication enabled but no password provided
+2026-04-20 16:27:03 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:27:03 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:27:03 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:03 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:03 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): authentication enabled but no password provided
+2026-04-20 16:27:04 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:27:04 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:04 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:04 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): authentication enabled but no password provided
+2026-04-20 16:27:05 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:27:05 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:05 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:05 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): authentication enabled but no password provided
+2026-04-20 16:27:06 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:27:06 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:06 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:06 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): authentication enabled but no password provided
+2026-04-20 16:27:07 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: authentication enabled but no password provided
+2026-04-20 16:27:08 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:27:08 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:27:08 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:08 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:08 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): authentication enabled but no password provided
+2026-04-20 16:27:09 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:27:09 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:09 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:09 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): authentication enabled but no password provided
+2026-04-20 16:27:10 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:27:10 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:10 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:10 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): authentication enabled but no password provided
+2026-04-20 16:27:11 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:27:11 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:11 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:11 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): authentication enabled but no password provided
+2026-04-20 16:27:12 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: authentication enabled but no password provided
+2026-04-20 16:27:13 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:27:13 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:27:13 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:13 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:13 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): authentication enabled but no password provided
+2026-04-20 16:27:14 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 2/4)
+2026-04-20 16:27:14 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:14 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:14 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (2/4): authentication enabled but no password provided
+2026-04-20 16:27:15 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 3/4)
+2026-04-20 16:27:15 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:15 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:15 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (3/4): authentication enabled but no password provided
+2026-04-20 16:27:16 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 4/4)
+2026-04-20 16:27:16 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:16 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:16 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (4/4): authentication enabled but no password provided
+2026-04-20 16:27:17 | ERROR    | obs_controller_app.obs.obs_client | Giving up connecting to OBS: authentication enabled but no password provided
+2026-04-20 16:27:18 | INFO     | obs_controller_app.app | Background OBS reconnect attempt
+2026-04-20 16:27:18 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:27:18 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='' subs=0 timeout=4.0
+2026-04-20 16:27:18 | ERROR    | obsws_python.reqs.ReqClient | OBSSDKError: authentication enabled but no password provided
+2026-04-20 16:27:18 | WARNING  | obs_controller_app.obs.obs_client | OBS connect failed (1/4): authentication enabled but no password provided
+2026-04-20 16:27:18 | INFO     | obs_controller_app.app | Shutting down
+2026-04-20 16:27:18 | INFO     | __main__ | Interrupted by user
+2026-04-20 16:27:47 | INFO     | __main__ | Starting OBS Controller v1.0.0
+2026-04-20 16:27:47 | INFO     | obs_controller_app.controller.ps4_input | Detected 2 joystick device(s)
+2026-04-20 16:27:47 | INFO     | obs_controller_app.controller.ps4_input | Opened joystick 0: ODDOR-TRUCKSHIFT (buttons=3)
+2026-04-20 16:27:47 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:27:47 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='5Qrkk87S8EmL2hcN' subs=0 timeout=4.0
+2026-04-20 16:27:47 | INFO     | obsws_python.reqs.ReqClient | Successfully identified ReqClient with the server using RPC version:1
+2026-04-20 16:27:47 | INFO     | obs_controller_app.obs.obs_client | Connected to OBS WebSocket
+2026-04-20 16:27:47 | ERROR    | obs_controller_app.obs.obs_client | Unexpected OBS error (get_record_status): Unexpected GetRecordStatus payload: <class 'obsws_python.util.GetRecordStatusDataclass'>
+Traceback (most recent call last):
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 104, in _send
+    return call(client)
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 130, in call
+    raise RuntimeError(f"Unexpected GetRecordStatus payload: {data!r}")
+RuntimeError: Unexpected GetRecordStatus payload: <class 'obsws_python.util.GetRecordStatusDataclass'>
+2026-04-20 16:27:47 | ERROR    | __main__ | Fatal error: Unexpected GetRecordStatus payload: <class 'obsws_python.util.GetRecordStatusDataclass'>
+Traceback (most recent call last):
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\main.py", line 27, in main
+    ObsControllerApp(config).run()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\app.py", line 88, in run
+    self._try_connect_obs(show_toast_on_failure=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\app.py", line 206, in _try_connect_obs
+    self._sync_recording_state_from_obs()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\app.py", line 239, in _sync_recording_state_from_obs
+    active = self._obs.is_recording()
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 133, in is_recording
+    active = self._send("get_record_status", call)
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 104, in _send
+    return call(client)
+  File "c:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 130, in call
+    raise RuntimeError(f"Unexpected GetRecordStatus payload: {data!r}")
+RuntimeError: Unexpected GetRecordStatus payload: <class 'obsws_python.util.GetRecordStatusDataclass'>
+2026-04-20 16:28:06 | INFO     | __main__ | Starting OBS Controller v1.0.0
+2026-04-20 16:28:06 | INFO     | obs_controller_app.controller.ps4_input | Detected 2 joystick device(s)
+2026-04-20 16:28:06 | INFO     | obs_controller_app.controller.ps4_input | Opened joystick 0: ODDOR-TRUCKSHIFT (buttons=3)
+2026-04-20 16:28:06 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:28:06 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='5Qrkk87S8EmL2hcN' subs=0 timeout=4.0
+2026-04-20 16:28:06 | INFO     | obsws_python.reqs.ReqClient | Successfully identified ReqClient with the server using RPC version:1
+2026-04-20 16:28:06 | INFO     | obs_controller_app.obs.obs_client | Connected to OBS WebSocket
+2026-04-20 16:28:06 | ERROR    | obs_controller_app.obs.obs_client | Unexpected OBS error (get_record_status): Unexpected GetRecordStatus payload: <class 'obsws_python.util.GetRecordStatusDataclass'>
+Traceback (most recent call last):
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 104, in _send
+    return call(client)
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 130, in call
+    raise RuntimeError(f"Unexpected GetRecordStatus payload: {data!r}")
+RuntimeError: Unexpected GetRecordStatus payload: <class 'obsws_python.util.GetRecordStatusDataclass'>
+2026-04-20 16:28:06 | ERROR    | __main__ | Fatal error: Unexpected GetRecordStatus payload: <class 'obsws_python.util.GetRecordStatusDataclass'>
+Traceback (most recent call last):
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\main.py", line 27, in main
+    ObsControllerApp(config).run()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\app.py", line 88, in run
+    self._try_connect_obs(show_toast_on_failure=True)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\app.py", line 206, in _try_connect_obs
+    self._sync_recording_state_from_obs()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\app.py", line 239, in _sync_recording_state_from_obs
+    active = self._obs.is_recording()
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 133, in is_recording
+    active = self._send("get_record_status", call)
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 104, in _send
+    return call(client)
+  File "C:\Developer\Personal\Programs\obs-controller\obs_controller_app\obs\obs_client.py", line 130, in call
+    raise RuntimeError(f"Unexpected GetRecordStatus payload: {data!r}")
+RuntimeError: Unexpected GetRecordStatus payload: <class 'obsws_python.util.GetRecordStatusDataclass'>
+2026-04-20 16:29:30 | INFO     | __main__ | Starting OBS Controller v1.0.0
+2026-04-20 16:29:30 | INFO     | obs_controller_app.controller.ps4_input | Detected 2 joystick device(s)
+2026-04-20 16:29:30 | INFO     | obs_controller_app.controller.ps4_input | Opened joystick 0: ODDOR-TRUCKSHIFT (buttons=3)
+2026-04-20 16:29:30 | INFO     | obs_controller_app.obs.obs_client | Connecting to OBS WebSocket 127.0.0.1:4455 (attempt 1/4)
+2026-04-20 16:29:30 | INFO     | obsws_python.baseclient.ObsClient | Connecting with parameters: host='127.0.0.1' port=4455 password='5Qrkk87S8EmL2hcN' subs=0 timeout=4.0
+2026-04-20 16:29:30 | INFO     | obsws_python.reqs.ReqClient | Successfully identified ReqClient with the server using RPC version:1
+2026-04-20 16:29:30 | INFO     | obs_controller_app.obs.obs_client | Connected to OBS WebSocket
+2026-04-20 16:29:30 | INFO     | obs_controller_app.app | OBS ready
+2026-04-20 16:29:30 | INFO     | obs_controller_app.controller.ps4_input | Joystick plugged in: 0
+2026-04-20 16:29:30 | INFO     | obs_controller_app.controller.ps4_input | Joystick plugged in: 1
+2026-04-20 16:29:41 | INFO     | obs_controller_app.app | Shutting down
+2026-04-20 16:29:41 | INFO     | __main__ | Interrupted by user

@@ -1,0 +1,9 @@
+# OBS WebSocket v5 client
+obsws-python>=1.7.0
+
+# Joystick input (pygame-ce is a drop-in fork with up-to-date wheels; see README)
+pygame-ce>=2.5.0
+
+# Optional system tray (enabled via settings.json)
+pystray>=0.19.5
+Pillow>=10.0.0
