@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import logging
 import queue
+import sys
 import threading
 import tkinter as tk
 from dataclasses import dataclass
@@ -16,6 +17,100 @@ from tkinter import font as tkfont
 from typing import Literal
 
 logger = logging.getLogger(__name__)
+
+# --- Windows: keep toasts above fullscreen / exclusive apps ----------------------------
+
+HWND_TOPMOST = -1
+SWP_NOMOVE = 0x0002
+SWP_NOSIZE = 0x0001
+SWP_SHOWWINDOW = 0x0040
+SWP_NOACTIVATE = 0x0010
+SWP_FRAMECHANGED = 0x0020
+GWL_EXSTYLE = -20
+WS_EX_TOOLWINDOW = 0x00000080
+WS_EX_NOACTIVATE = 0x08000000
+
+
+def _win32_pin_topmost(hwnd: int) -> None:
+    """Raise window above normal Z-order without stealing keyboard focus."""
+    try:
+        import ctypes
+    except ImportError:
+        return
+    user32 = ctypes.windll.user32
+    flags = SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW | SWP_NOACTIVATE
+    user32.SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, flags)
+
+
+def _win32_apply_fullscreen_friendly_styles(hwnd: int) -> None:
+    """
+    Tool / no-activate extended styles so the toast behaves like an overlay and
+    is less likely to be blocked by exclusive-fullscreen games (best-effort).
+    """
+    try:
+        import ctypes
+    except ImportError:
+        return
+    user32 = ctypes.windll.user32
+    try:
+        get_ex = user32.GetWindowLongPtrW
+        set_ex = user32.SetWindowLongPtrW
+    except AttributeError:
+        get_ex = user32.GetWindowLongW
+        set_ex = user32.SetWindowLongW
+    ex = int(get_ex(hwnd, GWL_EXSTYLE))
+    ex |= WS_EX_TOOLWINDOW | WS_EX_NOACTIVATE
+    set_ex(hwnd, GWL_EXSTYLE, ex)
+    user32.SetWindowPos(
+        hwnd,
+        HWND_TOPMOST,
+        0,
+        0,
+        0,
+        0,
+        SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED | SWP_NOACTIVATE | SWP_SHOWWINDOW,
+    )
+
+
+def _win32_toast_hwnd(win: tk.Misc) -> int | None:
+    if sys.platform != "win32":
+        return None
+    try:
+        return int(win.winfo_id())
+    except (tk.TclError, TypeError, ValueError):
+        return None
+
+
+def _win32_arm_topmost_pinner(win: tk.Toplevel) -> None:
+    """Re-apply TOPMOST while visible; games often fight Z-order every frame."""
+    if sys.platform != "win32":
+        return
+    win._toast_pin_active = True  # noqa: SLF001 — private attr on tk widget
+
+    def tick() -> None:
+        if not getattr(win, "_toast_pin_active", False):
+            return
+        try:
+            if not win.winfo_exists():
+                return
+        except tk.TclError:
+            return
+        hwnd = _win32_toast_hwnd(win)
+        if hwnd is not None:
+            _win32_pin_topmost(hwnd)
+        try:
+            win.after(120, tick)
+        except tk.TclError:
+            pass
+
+    win.after(1, tick)
+
+
+def _win32_disarm_topmost_pinner(win: tk.Toplevel) -> None:
+    try:
+        win._toast_pin_active = False  # noqa: SLF001
+    except tk.TclError:
+        pass
 
 ToastKind = Literal["info", "success", "error"]
 
@@ -125,6 +220,15 @@ class ToastService:
         y = 20
         win.geometry(f"{w}x{h}+{x}+{y}")
 
+        hwnd = _win32_toast_hwnd(win)
+        if hwnd is not None:
+            try:
+                _win32_apply_fullscreen_friendly_styles(hwnd)
+                _win32_pin_topmost(hwnd)
+                _win32_arm_topmost_pinner(win)
+            except Exception as exc:  # noqa: BLE001
+                logger.debug("Win32 toast layering failed (non-fatal): %s", exc)
+
         try:
             win.attributes("-alpha", 0.0)
         except tk.TclError:
@@ -144,6 +248,8 @@ class ToastService:
             else:
 
                 def fade_out(step_out: int = 10) -> None:
+                    if step_out == 10:
+                        _win32_disarm_topmost_pinner(win)
                     if step_out <= 0:
                         try:
                             win.destroy()
